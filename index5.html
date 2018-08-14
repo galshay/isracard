@@ -1,0 +1,80 @@
+﻿<!doctype html>
+<html ng-app="ui.bootstrap.demo">
+<head>
+    <link data-require="bootstrap-css@*" data-semver="4.0.0-alpha.2" rel="stylesheet" 
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" />
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-cookies.js"></script>    
+    <link href="style.css" rel="stylesheet">
+        <script src="script5.js"></script>
+</head>
+<body dir="rtl">
+    <div ng-controller="ModalDemoCtrl as $ctrl" class="modal-demo">
+
+        <h1>רשימה של פרוייקטים</h1>
+        <h4>סה"כ {{todos.length}} פרוייקטים </h4>
+        <div>
+            <form>
+            <label for="searchString">חיפוש מחרוזת</label>
+            <input name="searchString" type="text" ng-model="data" />
+            
+            <input value="Search" type="submit" ng-click="readItems()">
+            </form>
+            
+        </div>
+        <!--
+        controller to display poup modal display attribute of item
+        -->
+        <script type="text/ng-template" id="myModalContent.html">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modal-title">מאפיינים</h3>
+            </div>
+            <div class="modal-body" id="modal-body">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>name</th>
+                            <th>value</th>
+                        </tr>
+                    </thead>
+                    <tbody id="properties">
+                        <tr ng-repeat="item in $ctrl.items">
+                            <td>{{item.name}}</td>
+                            <td class="propertyvalue">{{ item.value }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" type="button" ng-click="$ctrl.ok()">OK</button>
+                
+            </div>
+        </script>
+        <table style="width:100%">
+            <tr>
+                <th style="width: 5%">מספר</th>
+                <th style="width: 5%">שם</th>
+                <th style="width: 5%">avatar</th>
+                <th style="width: 5%">מועדפים</th>
+                <th style="width: 5%">כללי</th>
+            </tr>
+            <tr ng-repeat="item in items">
+                <td style="width: 5%">{{$index+1}}</td>
+                <td style="width:73%">{{item.name}}</td>
+                <td style="width: 5%"><img width="32" height="32" src="{{item.owner.avatar_url}}"/></td>
+                <td style="width: 5%">
+                    <button type="button" class="btn btn-primary" ng-click="$ctrl.addBookmark($index,item.id)">Bookmark</button>
+                </td>
+                
+                <td style="width: 5%">
+                    <button type="button" class="btn btn-success" ng-click="$ctrl.open($index,'detail')">detail</button>
+                </td>
+            </tr>
+            
+        </table>
+       
+    </div>
+</body>
+</html>

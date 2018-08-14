@@ -1,0 +1,61 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 14/08/2018, 00:32:50
+    Author     : user
+*/
+.app-modal-window .modal-dialog {
+  width: 500px;
+}
+    .propertyvalue
+    {
+        text-align:left !important;
+        margin-left:4px !important;;
+        padding-left:4px !important;;
+    }
+    .modal-body
+    {
+        margin-left:4px !important;;
+        padding-left:4px !important;;
+    }
+   .lableowner
+   {
+       float:right;
+       padding-right:10px;
+       font-weight: bold;
+       padding-left:10px;
+   }
+   .dataowner
+   {
+       
+   }
+   th
+        {
+            text-align:right !important;
+            border-right:1px solid red;
+            border-bottom:3px solid green;
+            border-top:3px solid green;
+        }
+        th:last-child
+        {
+            border-left:1px solid red;
+        }
+        td:last-child
+        {
+            border-left:1px solid red;
+        }
+        td
+        {
+            border-right:1px solid red;
+            border-bottom:1px solid red;
+        }
+        body
+        {
+            margin-right:50px;
+            margin-left:50px;
+            padding-right:50px;
+            padding-left:50px;
+        }
